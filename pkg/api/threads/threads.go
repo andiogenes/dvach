@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/andiogenes/dvach/pkg/utils"
-	"github.com/microcosm-cc/bluemonday"
 	"github.com/pkg/errors"
 	"io"
 	"log"
@@ -29,12 +28,10 @@ func ListThreads(board string) {
 		log.Panic(err)
 	}
 
-	p := bluemonday.StrictPolicy()
-
 	for _, v := range threads {
 		id := utils.BlueColor(v.Id)
 		subject := v.Subject
-		comment := p.Sanitize(v.Comment)
+		comment := utils.FormatHTML(v.Comment, true)
 
 		fmt.Printf("%s %s\n\t%s\n", id, subject, comment)
 	}

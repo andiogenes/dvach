@@ -1,4 +1,4 @@
-package api
+package boards
 
 import (
 	"encoding/json"

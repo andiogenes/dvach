@@ -1,4 +1,4 @@
-package api
+package threads
 
 import (
 	"encoding/json"
@@ -20,7 +20,7 @@ type Thread struct {
 	Comment string `json:"comment"`
 }
 
-// ListThreads prints all available boards.
+// ListThreads prints all available threads.
 //
 // Function will panic if an error occurs.
 func ListThreads(board string) {

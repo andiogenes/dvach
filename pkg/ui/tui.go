@@ -11,8 +11,8 @@ import (
 	"strconv"
 )
 
-// InitTUI creates and runs instance of TUI client.
-func InitTUI() error {
+// Run creates and runs instance of TUI client.
+func Run() error {
 	ui, err := tui.New(nil)
 	if err != nil {
 		return err

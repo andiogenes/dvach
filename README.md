@@ -3,7 +3,7 @@ dvach is a simple client cli tool for the 2ch.hk imageboard. (go version of [Tat
 
 # Installation
 ```
-go github.com/andiogenes/dvach
+go get github.com/andiogenes/dvach
 ```
 
 # Usage

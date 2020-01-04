@@ -11,17 +11,17 @@ var (
 	tagTrimmer = bluemonday.StrictPolicy()
 )
 
-// formatComment prepares comment to console output.
+// formatHTML prepares HTML data to console output.
 //
-// Indents comment if corresponding value passed.
-func FormatHTML(comment string, indent bool) string {
+// Indents data if corresponding value passed.
+func FormatHTML(data string, indent bool) string {
 	separator := "\n"
 	if indent {
 		separator = "\n\t"
 	}
 
 	// Replace <br> tags with escape characters
-	dest := strings.ReplaceAll(comment, "<br>", separator)
+	dest := strings.ReplaceAll(data, "<br>", separator)
 	// Remove HTML tags
 	dest = tagTrimmer.Sanitize(dest)
 	// Replace HTML escape entities with corresponding symbols
